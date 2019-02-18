@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<title>Success</title>
+
+</head>
+
+<style type="text/css">
+p {
+	color:green;
+}
+
+
+</style>
+
+<body>
+
+	{% with messages = get_flashed_messages(category_filter=['flashsuccess']) %}
+	{% if messages %}
+	{% for message in messages %}
+	<p>{{message}}</p>
+	{% endfor %}
+	{% endif %}
+	{% endwith %}
+
+	<form action = "/logout">
+
+	<h>Welcome, you've been logged in, {{ name }}!</h>
+	<a href = "/logout">Logout</a>
+
+	</form>
+
+
+
+
+</body>
+
+</html>
